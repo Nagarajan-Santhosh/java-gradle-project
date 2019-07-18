@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-world
+spec:
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - name: hello-world-docker
+        image: madurad/hello-world-docker:1
+        command: ["java"]
+        args: ["-jar","/app/app.jar"]
+        ports: 
+        - containerPort: 8181
