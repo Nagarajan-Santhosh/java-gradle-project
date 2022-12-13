@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-               sh('sudo docker build -t madurad/hello-world-docker:$BUILD_NUMBER .')
+               sh('sudo docker build -t santhoshsp/hello-world-docker:$BUILD_NUMBER .')
             }
         }
         stage('Push Docker Image') {
             steps {
-                sh('sudo docker push madurad/hello-world-docker:$BUILD_NUMBER')
+                sh('sudo docker push santhoshsp/hello-world-docker:$BUILD_NUMBER')
             }
         }
     }
