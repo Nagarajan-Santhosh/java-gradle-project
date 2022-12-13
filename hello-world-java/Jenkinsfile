@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('git clone') {
             steps {
-                sh('./gradlew build')
+                git credentialsId: 'dockerhub', url: 'https://github.com/Nagarajan-Santhosh/java-gradle-project.git/'
             }
         }
         stage('Build Docker Image') {
